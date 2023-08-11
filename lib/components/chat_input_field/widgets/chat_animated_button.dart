@@ -1,5 +1,6 @@
 import 'package:chat_package/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class ChatAnimatedButton extends StatelessWidget {
   final int duration;
@@ -55,11 +56,21 @@ class ChatAnimatedButton extends StatelessWidget {
             ),
             child: isRecording
                 ? animatedButtonWidget
-                : Icon(
-                    isText ? sendTextIcon : Icons.mic,
-                    color: Colors.white,
-                    size: 25,
+                : Transform.rotate(
+                    angle: isText ? 180 * math.pi / 180 : 0,
+                    child: IconButton(
+                      icon: Icon(
+                        isText ? sendTextIcon : Icons.mic,
+                        color: Colors.white,
+                      ),
+                      onPressed: null,
+                    ),
                   ),
+            // Icon(
+            //     isText ? sendTextIcon : Icons.mic,
+            //     color: Colors.white,
+            //     size: 25,
+            //   ),
           ),
         ),
       ),

@@ -73,6 +73,7 @@ class _ChatTextViewWidgetState extends State<ChatInputFieldContainerWidget> {
                         onChanged: widget.onTextFieldValueChanged,
                         decoration: InputDecoration(
                           hintText: widget.sendMessageHintText,
+                          hintTextDirection: TextDirection.ltr,
                           border: InputBorder.none,
                         ),
                         onFieldSubmitted: (_) {
@@ -82,6 +83,9 @@ class _ChatTextViewWidgetState extends State<ChatInputFieldContainerWidget> {
                       ),
               ),
             ),
+          ),
+          SizedBox(
+            width: 10,
           ),
           InkWell(
             onTap: () {
